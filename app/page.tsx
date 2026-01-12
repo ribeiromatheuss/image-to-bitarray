@@ -176,34 +176,40 @@ export default function BitArrayConverter() {
     <div className="min-h-screen bg-zinc-950 text-zinc-400 flex flex-col">
       {/* Navbar */}
       <nav className="sticky top-0 z-50 border-b border-white/5 bg-zinc-950/80 backdrop-blur-xl">
-        <div className="max-w-7xl mx-auto px-6 h-14 flex items-center justify-between">
-          <div className="flex items-center gap-2 group">
+        <div className="max-w-7xl mx-auto px-4 h-14 flex items-center justify-between">
+          {/* Logo */}
+          <div className="flex items-center gap-2">
             <div className="w-6 h-6 rounded flex items-center justify-center bg-white text-black">
               <Database className="w-3.5 h-3.5" />
             </div>
-            <span className="text-zinc-100 font-medium tracking-tight text-sm group-hover:text-white transition-colors">
+            <span className="text-zinc-100 font-medium tracking-tight text-sm">
               BitArray<span className="text-zinc-500 font-normal">.io</span>
             </span>
           </div>
-          <div className="flex items-center gap-4">
-            <a
-              href="#"
-              className="text-xs font-medium hover:text-white transition-colors"
-            >
-              Documentation
-            </a>
-            <a
-              href="#"
-              className="text-xs font-medium hover:text-white transition-colors"
-            >
-              API (coming soon)
-            </a>
-            <div className="h-4 w-px bg-white/10"></div>
-            <div className="flex items-center gap-2">
-              <div className="w-2 h-2 rounded-full bg-emerald-500 shadow-[0_0_8px_rgba(16,185,129,0.4)]"></div>
-              <span className="text-xs text-zinc-500">
-                Client-side Processing
-              </span>
+
+          {/* Right content */}
+          <div className="flex flex-wrap items-center gap-3 text-xs">
+            {/* Links – escondidos no mobile */}
+            <div className="hidden sm:flex items-center gap-4">
+              <a
+                href="#"
+                className="font-medium hover:text-white transition-colors"
+              >
+                Documentation
+              </a>
+              <a
+                href="#"
+                className="font-medium hover:text-white transition-colors"
+              >
+                API (coming soon)
+              </a>
+              <div className="h-4 w-px bg-white/10"></div>
+            </div>
+
+            {/* Status – sempre visível */}
+            <div className="flex items-center gap-2 text-zinc-500 text-xs">
+              <div className="w-2 h-2 rounded-full bg-emerald-500" />
+              <span className="whitespace-nowrap">Client-side</span>
             </div>
           </div>
         </div>
