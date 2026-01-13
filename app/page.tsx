@@ -1,3 +1,5 @@
+/* eslint-disable @next/next/no-img-element */
+/* eslint-disable jsx-a11y/alt-text */
 // app/page.tsx
 "use client";
 
@@ -146,32 +148,6 @@ export default function BitArrayConverter() {
 
   return (
     <>
-      {/* Schema.org para página específica */}
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{
-          __html: JSON.stringify({
-            "@context": "https://schema.org",
-            "@type": "SoftwareApplication",
-            name: "BitArray Image Converter",
-            applicationCategory: "DeveloperApplication",
-            operatingSystem: "Web Browser",
-            offers: {
-              "@type": "Offer",
-              price: "0",
-              priceCurrency: "USD",
-            },
-            aggregateRating: {
-              "@type": "AggregateRating",
-              ratingValue: "4.8",
-              ratingCount: "127",
-              bestRating: "5",
-              worstRating: "1",
-            },
-          }),
-        }}
-      />
-
       <div className="min-h-screen bg-zinc-950 text-zinc-400 flex flex-col">
         {/* Navbar */}
         <nav className="sticky top-0 z-50 border-b border-white/5 bg-zinc-950/80 backdrop-blur-xl">
@@ -222,13 +198,14 @@ export default function BitArrayConverter() {
             {/* Header */}
             <div className="lg:col-span-2 text-center mb-4">
               <h1 className="text-3xl md:text-4xl font-medium tracking-tight text-white mb-3">
-                Image to Byte Array Converter
+                Free Image to Byte Array Converter Online
               </h1>
 
-              <p className="text-zinc-500 max-w-xl mx-auto text-sm leading-relaxed">
-                Convert images (PNG, JPG, WEBP) into byte arrays or binary
-                strings and render byte arrays back to images. All processing
-                happens client-side.
+              <p className="text-zinc-500 max-w-2xl mx-auto text-sm leading-relaxed">
+                Convert images (PNG, JPG, WEBP) into byte arrays, BYTEA format
+                for PostgreSQL, or binary strings. Render byte arrays back to
+                images instantly. All processing happens client-side - no
+                uploads, 100% secure.
               </p>
             </div>
 
@@ -472,6 +449,55 @@ export default function BitArrayConverter() {
               </CardFooter>
             </Card>
           </div>
+          <section
+            id="how-to-use"
+            className="max-w-7xl w-full border-t border-white/5 pt-12 pb-12"
+          >
+            <h2 className="text-2xl font-medium text-white mb-8 text-center">
+              How to Convert Image to Byte Array
+            </h2>
+
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+              <article className="bg-zinc-900/40 border border-white/5 rounded-lg p-6">
+                <div className="w-10 h-10 rounded-full bg-indigo-500/10 flex items-center justify-center text-indigo-400 font-medium mb-4">
+                  1
+                </div>
+                <h3 className="text-white font-medium mb-2">
+                  Upload Your Image
+                </h3>
+                <p className="text-sm text-zinc-500 leading-relaxed">
+                  Click the upload area or drag and drop your PNG, JPG, or WEBP
+                  image. Perfect for PostgreSQL storage.
+                </p>
+              </article>
+
+              <article className="bg-zinc-900/40 border border-white/5 rounded-lg p-6">
+                <div className="w-10 h-10 rounded-full bg-indigo-500/10 flex items-center justify-center text-indigo-400 font-medium mb-4">
+                  2
+                </div>
+                <h3 className="text-white font-medium mb-2">
+                  Convert to Byte Array
+                </h3>
+                <p className="text-sm text-zinc-500 leading-relaxed">
+                  Click &quot;Convert&quot; to transform your image into byte array or
+                  BYTEA format.
+                </p>
+              </article>
+
+              <article className="bg-zinc-900/40 border border-white/5 rounded-lg p-6">
+                <div className="w-10 h-10 rounded-full bg-indigo-500/10 flex items-center justify-center text-indigo-400 font-medium mb-4">
+                  3
+                </div>
+                <h3 className="text-white font-medium mb-2">
+                  Copy or Download
+                </h3>
+                <p className="text-sm text-zinc-500 leading-relaxed">
+                  Copy to clipboard or download. Use in Java, Python, C++ or
+                  your database.
+                </p>
+              </article>
+            </div>
+          </section>
           {/* About Section */}
           <section
             id="documentation"

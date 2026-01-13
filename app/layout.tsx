@@ -3,7 +3,6 @@ import "./globals.css";
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 
-
 const geistSans = Geist({
   variable: "--font-geist-sans",
   subsets: ["latin"],
@@ -15,7 +14,8 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Free Image to Byte Array Converter Online | PostgreSQL BYTEA | BitArray",
+  title:
+    "Free Image to Byte Array Converter Online | PostgreSQL BYTEA | BitArray",
   description:
     "Convert images (PNG, JPG, WEBP) to byte arrays and PostgreSQL BYTEA format. Free online tool with client-side processing - no uploads. Perfect for developers working with binary image data in Java, Python, C++.",
   keywords: [
@@ -39,7 +39,7 @@ export const metadata: Metadata = {
   creator: "Matheus Ribeiro",
   publisher: "BitArray",
   metadataBase: new URL("https://bitarray.vercel.app"),
-  
+
   openGraph: {
     title: "Free Image to Byte Array Converter - BitArray",
     description:
@@ -57,7 +57,7 @@ export const metadata: Metadata = {
       },
     ],
   },
-  
+
   twitter: {
     card: "summary_large_image",
     title: "Free Image to Byte Array Converter - BitArray",
@@ -66,7 +66,7 @@ export const metadata: Metadata = {
     images: ["/og-image.png"], // Mesma imagem do OpenGraph
     creator: "@seutwitter", // Adicione seu Twitter se tiver
   },
-  
+
   robots: {
     index: true,
     follow: true,
@@ -78,18 +78,18 @@ export const metadata: Metadata = {
       "max-snippet": -1,
     },
   },
-  
+
   alternates: {
     canonical: "https://bitarray.vercel.app",
   },
-  
+
   // Informações adicionais para rich snippets
   applicationName: "BitArray",
   category: "Developer Tools",
-  
+
   // Para PWA (opcional mas recomendado)
   manifest: "/manifest.json",
-  
+
   // Outros metadados úteis
   other: {
     "apple-mobile-web-app-capable": "yes",
@@ -107,13 +107,56 @@ export default function RootLayout({
     <html lang="en">
       <head>
         {/* Favicon links */}
-        <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
-        <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
-        <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
-        
+        <link
+          rel="icon"
+          type="image/png"
+          sizes="32x32"
+          href="/favicon-32x32.png"
+        />
+        <link
+          rel="icon"
+          type="image/png"
+          sizes="16x16"
+          href="/favicon-16x16.png"
+        />
+        <link
+          rel="apple-touch-icon"
+          sizes="180x180"
+          href="/apple-touch-icon.png"
+        />
+
+        {/* Open Graph / Facebook */}
+        <meta property="og:type" content="website" />
+        <meta property="og:url" content="https://bitarray.vercel.app/" />
+        <meta
+          property="og:title"
+          content="BitArray - Image to Byte Array Converter"
+        />
+        <meta
+          property="og:description"
+          content="Convert images to byte arrays instantly. Client-side processing, 100% secure."
+        />
+        <meta property="og:image" content="https://bitarray.vercel.app/og-image.png" />
+
+        {/* Twitter  */}
+        <meta property="twitter:card" content="summary_large_image" />
+        <meta property="twitter:url" content="https://bitarray.vercel.app/" />
+        <meta
+          property="twitter:title"
+          content="BitArray - Image to Byte Array Converter"
+        />
+        <meta
+          property="twitter:description"
+          content="Convert images to byte arrays instantly. Client-side processing, 100% secure."
+        />
+        <meta
+          property="twitter:image"
+          content="https://bitarray.vercel.app/og-image.png"
+        />
+
         {/* Theme color para mobile */}
         <meta name="theme-color" content="#09090b" />
-        
+
         {/* Schema.org JSON-LD */}
         <script
           type="application/ld+json"
@@ -121,36 +164,37 @@ export default function RootLayout({
             __html: JSON.stringify({
               "@context": "https://schema.org",
               "@type": "WebApplication",
-              "name": "BitArray - Image to Byte Array Converter",
-              "description": "Free online tool to convert images to byte arrays and BYTEA format for PostgreSQL databases",
-              "url": "https://bitarray.vercel.app",
-              "applicationCategory": "DeveloperApplication",
-              "operatingSystem": "Any",
-              "browserRequirements": "Requires JavaScript. Requires HTML5.",
-              "offers": {
+              name: "BitArray - Image to Byte Array Converter",
+              description:
+                "Free online tool to convert images to byte arrays and BYTEA format for PostgreSQL databases",
+              url: "https://bitarray.vercel.app",
+              applicationCategory: "DeveloperApplication",
+              operatingSystem: "Any",
+              browserRequirements: "Requires JavaScript. Requires HTML5.",
+              offers: {
                 "@type": "Offer",
-                "price": "0",
-                "priceCurrency": "USD"
+                price: "0",
+                priceCurrency: "USD",
               },
-              "featureList": [
+              featureList: [
                 "Convert images to byte arrays",
                 "Render byte arrays to images",
                 "PostgreSQL BYTEA support",
                 "Client-side processing",
                 "PNG, JPG, WEBP support",
                 "No server uploads",
-                "Free forever"
+                "Free forever",
               ],
-              "screenshot": "https://bitarray.vercel.app/screenshot.png",
-              "author": {
+              screenshot: "https://bitarray.vercel.app/screenshot.png",
+              author: {
                 "@type": "Person",
-                "name": "Matheus Ribeiro"
+                name: "Matheus Ribeiro",
               },
-              "creator": {
+              creator: {
                 "@type": "Person",
-                "name": "Matheus Ribeiro"
-              }
-            })
+                name: "Matheus Ribeiro",
+              },
+            }),
           }}
         />
       </head>
