@@ -1,4 +1,3 @@
-// Imagem → BYTEA
 export async function imageToByteArray(
   file: File
 ): Promise<Uint8Array> {
@@ -6,12 +5,10 @@ export async function imageToByteArray(
   return new Uint8Array(buffer)
 }
 
-// BYTEA → download (CORRIGIDO)
 export function downloadByteArray(
   bytes: Uint8Array,
   filename = "image.bytea"
 ) {
-  // 🔒 cria ArrayBuffer REAL
   const safeBuffer = new ArrayBuffer(bytes.byteLength)
   new Uint8Array(safeBuffer).set(bytes)
 
@@ -28,7 +25,6 @@ export function downloadByteArray(
   URL.revokeObjectURL(url)
 }
 
-// BYTEA → imagem (CORRIGIDO)
 export function byteArrayToImageURL(
   bytes: Uint8Array,
   mime: string
@@ -38,4 +34,23 @@ export function byteArrayToImageURL(
 
   const blob = new Blob([safeBuffer], { type: mime })
   return URL.createObjectURL(blob)
+}
+
+export function uint8ArrayToByteaHex(bytes: Uint8Array): string {
+  let hex = "\\x";
+  for (const b of bytes) {
+    hex += b.toString(16).padStart(2, "0");
+  }
+  return hex;
+}
+
+export function byteaHexToUint8Array(bytea: string): Uint8Array {
+  const clean = bytea.startsWith("\\x") ? bytea.slice(2) : bytea;
+  const bytes = new Uint8Array(clean.length / 2);
+
+  for (let i = 0; i < clean.length; i += 2) {
+    bytes[i / 2] = parseInt(clean.substr(i, 2), 16);
+  }
+
+  return bytes;
 }
